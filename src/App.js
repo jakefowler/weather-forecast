@@ -57,9 +57,11 @@ const forecastDummy = [
 
 class App extends React.Component {
     render() {
+        let today = new Date();
+
         return <div className="App">
             {forecastDummy.map((day, i) => {
-                return <ForecastDay dayNum={i} forecast={day} key={i} />
+                return <ForecastDay dayNum={(today.getDay() + i) % 7} forecast={day} key={i} />
             })}
         </div>
     }
