@@ -1,33 +1,146 @@
+* {
+    box-sizing: border-box;
+    font-family: Consolas, 'Courier New', Courier, monospace
+}
+
+*::before {
+    color: gray
+}
+
 .App {
-  text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95vw;
+    height: 95vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.day {
+    /* background-color: pink; */
+    position: relative;
+    height: 400px;
+    width: 300px;
+    margin: auto 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen and (max-width: 400px) {
+    .day {
+        margin: auto;
+    }
 }
 
-.App-link {
-  color: #61dafb;
+.day::after {
+    position: absolute;
+    font-weight: lighter;
+    top: 0px;
+    right: -40px;
+    content: "";
+    height: 400px;
+    width: 112px;
+    font-size: 450px;
+    line-height: .72;
+    transform: scale(.7, 1);
+    background: url('./assets/cbracket_right.svg') no-repeat;
+    background-size: contain;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.day::before {
+    position: absolute;
+    color: black;
+    top: 0px;
+    left: -40px;
+    content: "";
+    height: 400px;
+    width: 112px;
+    font-size: 450px;
+    line-height: .72;
+    transform: scale(.7, 1);
+    background: url('./assets/cbracket_left.svg') no-repeat;
+    background-size: contain;
+}
+
+span.yellow {
+    color: gold;
+}
+
+span.blue {
+    color: blue;
+}
+
+span.lightblue {
+    color: lightblue;
+}
+
+#maxTemp {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 70px;
+}
+
+#maxTemp::before {
+    position: absolute;
+    right: 80px;
+    top: 52px;
+    font-size: 12px;
+    content: "\"maxTemp\":";
+}
+
+#minTemp {
+    position: absolute;
+    right: 30px;
+    top: 95px;
+    font-size: 50px;
+}
+
+#minTemp::before {
+    position: absolute;
+    right: 60px;
+    top: 35px;
+    font-size: 12px;
+    content: "\"minTemp\":";
+}
+
+#wind {
+    position: absolute;
+    right: 30px;
+    bottom: 40px;
+    font-size: 24px;
+}
+
+#wind::before {
+    position: absolute;
+    right: 70px;
+    bottom: 5px;
+    font-size: 12px;
+    content: "\"wind\":";
+}
+
+#windDirection {
+    font-size: 40px;
+}
+
+#humidity {
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    font-size: 24px;
+}
+
+#humidity::before {
+    position: absolute;
+    left: 42px;
+    bottom: 5px;
+    font-size: 12px;
+    content: ":\"humidity\"";
+}
+
+#pic {
+    position: absolute;
+    left: 30px;
+    top: 140px;
+    font-size: 24px;
 }
