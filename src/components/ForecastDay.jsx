@@ -21,12 +21,25 @@ const asciiWeather = {
     "ThunderyShowers": "<span class=\"yellow\"> _`/\"\"</span>.-.    </br><span class=\"yellow\">  ,\\_</span>(   ).  </br><span class=\"yellow\">   /</span>(___(__) </br>    ⚡ʻ ʻ⚡ʻ ʻ </br>    ʻ ʻ ʻ ʻ  ",
     "ThunderySnowShowers": "<span class=\"yellow\"> _`/\"\"</span>.-.    </br><span class=\"yellow\">  ,\\_</span>(   ).  </br><span class=\"yellow\">   /</span>(___(__) </br>     *⚡ *⚡ * </br>    *  *  *  ",
     "04d": "             </br>     .--.    </br>  .-(    ).  </br> (___.__)__) </br>             "
-}
+};
+
+const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+];
 
 function ForecastDay(props) {
     let {temp_max, temp_min, wind_dir, wind_speed, humidity, weather_icon_id} = props.forecast;
 
     return <div className="day">
+        <div id="dayName">
+            "{days[props.dayNum]}":
+        </div>
         <div id="maxTemp">
             {temp_max}
         </div>

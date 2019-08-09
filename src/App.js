@@ -83,6 +83,7 @@ class App extends React.Component {
 
     render() {
         let {zipcode, weatherData, validZip} = this.state;
+        let today = new Date();
 
         return <div className="App">
             <div id="location">
@@ -91,7 +92,7 @@ class App extends React.Component {
             </div>
             {!!weatherData && weatherData.map((day, i) => {
                 console.log(day);
-                return <ForecastDay dayNum={i} forecast={day} key={i} />
+                return <ForecastDay dayNum={(today.getDay() + i) % 7} forecast={day} key={i} />
             })}
         </div>
     }
