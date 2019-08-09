@@ -34,31 +34,33 @@ const days = [
 ];
 
 function ForecastDay(props) {
-    let {temp_max, temp_min, wind_dir, wind_speed, humidity, weather_icon_id} = props.forecast;
+    let {date, temp_max, temp_min, wind_dir, wind_speed, humidity, weather_icon_id} = props.forecast;
 
     return <div className="day">
         <div id="dayName">
-            "{days[props.dayNum]}":
+            <span className="subtext">"{days[props.dayNum]}":</span>
         </div>
         <div id="maxTemp">
-            {temp_max}
+            <span className="subtext">"max_temp":</span>{temp_max}
         </div>
         <div id="minTemp">
-            {temp_min}
+            <span className="subtext">"min_temp":</span>{temp_min}
         </div>
         <div id="wind">
             <div id="windDirection" style={{transform: `rotate(${wind_dir}deg)`}}>
                 ->
             </div>
             <div id="windSpeed">
-                {Math.round(wind_speed)}mph
+                <span className="subtext">"wind":</span>{Math.round(wind_speed)}mph
             </div>
         </div>
         <div id="humidity">
-            {Math.round(humidity)}%
+            <span className="subtext">"humidity":</span>{Math.round(humidity)}%
         </div>
-        <pre id="pic" dangerouslySetInnerHTML={{__html: asciiWeather[weather_icon_id.replace('n','d')]}}>
-        </pre>
+        <pre id="pic" dangerouslySetInnerHTML={{__html: asciiWeather[weather_icon_id.replace('n','d')]}}></pre>
+        <div id="date">
+            <span className="subtext">{date}</span>
+        </div>
     </div>
 }
 

@@ -9,6 +9,7 @@
 
 .App {
     margin: 10px auto;
+    margin-top: 25px;
     padding: 10px;
     text-align: center;
     display: flex;
@@ -34,6 +35,9 @@
 }
 
 @media screen and (max-width: 400px) {
+    .App {
+        margin-top: 40px;
+    }
     .day {
         margin: auto;
     }
@@ -93,13 +97,18 @@ span.lightblue {
     font-size: 70px;
 }
 
-#maxTemp::before {
+span.subtext {
+    font-size: 12px;
+    color: gray;
+}
+
+/* #maxTemp::before {
     position: absolute;
     right: 80px;
     top: 52px;
     font-size: 12px;
     content: "\"maxTemp\":";
-}
+} */
 
 #minTemp {
     position: absolute;
@@ -108,13 +117,13 @@ span.lightblue {
     font-size: 50px;
 }
 
-#minTemp::before {
+/* #minTemp::before {
     position: absolute;
     right: 60px;
     top: 35px;
     font-size: 12px;
     content: "\"minTemp\":";
-}
+} */
 
 #wind {
     position: absolute;
@@ -123,13 +132,13 @@ span.lightblue {
     font-size: 24px;
 }
 
-#wind::before {
+/* #wind::before {
     position: absolute;
     right: 70px;
     bottom: 5px;
     font-size: 12px;
     content: "\"wind\":";
-}
+} */
 
 #windDirection {
     font-size: 40px;
@@ -142,17 +151,24 @@ span.lightblue {
     font-size: 24px;
 }
 
-#humidity::before {
+/* #humidity::before {
     position: absolute;
     left: 42px;
     bottom: 5px;
     font-size: 12px;
     content: ":\"humidity\"";
-}
+} */
 
 #pic {
     position: absolute;
     left: 30px;
     top: 140px;
     font-size: 24px;
+}
+
+#date {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%);
 }
