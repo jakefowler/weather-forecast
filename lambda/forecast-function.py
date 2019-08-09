@@ -11,8 +11,22 @@ def lambda_handler(event, context):
     apiKey = "99e23cb08eada4180401a2c68fbd3014"
     baseUrl = "https://api.openweathermap.org/data/2.5/forecast"
 
-    zipcode = event["queryStringParameters"]["zipcode"]
-    response = requests.get(url = baseUrl, params = {'zip':zipcode, 'appid':apiKey})
+    response = ''
+
+    if 'zipcode' in event["queryStringParameters"]:
+        zipcode = event["queryStringParameters"]["zipcode"]
+        response = requests.get(url = baseUrl, params = {'zip':zipcode, 'appid':apiKey})
+    elif 'lat' in event["queryStringParameters"]:
+        lat = event["queryStringParameters"]["lat"]
+        lon = event["queryStringParameters"]["lon"]
+        response = requests.get(url = baseUrl, params = {'lat':lat, 'lon':lon, 'appid':apiKey})
+    else:
+        return {
+        'statusCode': 400,
+        'headers': {
+            'Access-Control-Allow-Origin': '*'
+        }
+
     weather = response.json()
 
     data = {'city': weather['city']}
@@ -58,5 +72,8 @@ def lambda_handler(event, context):
         
     return {
         'statusCode': 200,
-        'body': json.dumps(data)
+        'body': json.dumps(data),
+        'headers': {
+            'Access-Control-Allow-Origin': '*'
+        }
     }
