@@ -41,21 +41,21 @@ function ForecastDay(props) {
             <span className="subtext">"{days[props.dayNum]}":</span>
         </div>
         <div id="maxTemp">
-            <span className="subtext">"max_temp":</span>{temp_max}
+            <span className="subtext">"max_temp":</span><span className="orange">{temp_max}</span>
         </div>
         <div id="minTemp">
-            <span className="subtext">"min_temp":</span>{temp_min}
+            <span className="subtext">"min_temp":</span><span className="orange">{temp_min}</span>
         </div>
         <div id="wind">
             <div id="windDirection" style={{transform: `rotate(${wind_dir}deg)`}}>
                 ->
             </div>
             <div id="windSpeed">
-                <span className="subtext">"wind":</span>{Math.round(wind_speed)}mph
+                <span className="subtext">"wind":</span><span className="orange">{Math.round(wind_speed)}</span><span className="units">mph</span>
             </div>
         </div>
         <div id="humidity">
-            <span className="subtext">"humidity":</span>{Math.round(humidity)}%
+            <span className="subtext">"humidity":</span><span className="orange">{Math.round(humidity)}</span><span className="units">%</span>
         </div>
         <pre id="pic" dangerouslySetInnerHTML={{__html: asciiWeather[weather_icon_id.replace('n','d')]}}></pre>
         <div id="date">

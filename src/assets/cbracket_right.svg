@@ -83,7 +83,7 @@
 				</foreignObject>
 				<text id="XMLID_1_" transform="matrix(1 0 0 1 -37.6001 148.4004)" display="inline"><tspan x="0" y="0" font-family="'LetterGothicStd'" font-size="200">}</tspan></text>
 			</switch>
-			<g id="raster" i:knockout="Off">
+			<g id="raster" fill="#4d4d4c" i:knockout="Off">
 				<path i:knockout="Off" d="M19.8,25.8C19.8,11.2,15.6,2.2,0,0.4L0.4,0C23,0.4,29.2,7.2,29.2,29v30.2c0,13.4,1.4,19.8,16,23.4V83
 					c-14.4,3.6-16,10-16,23.2v32.2c0,21-7.8,27-28.8,27.6L0,165.601c16-2.4,19.8-10.4,19.8-25.601v-32.2c0-13.6,1.8-21.4,16.8-24.8
 					v-0.4C21.4,79,19.8,70.6,19.8,57V25.8z"/>
