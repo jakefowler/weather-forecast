@@ -1,4 +1,4 @@
-import requests
+from botocore.vendored import requests
 import json
 from statistics import mean
 from collections import Counter
@@ -6,12 +6,12 @@ from collections import Counter
 def convertKelvToFahr(kelv):
     return (kelv - 273.150) * 9/5 + 32
 
-# def lambda_handler(event, context):
-def lambda_handler(zipcode):
+def lambda_handler(event, context):
 
     apiKey = "99e23cb08eada4180401a2c68fbd3014"
     baseUrl = "https://api.openweathermap.org/data/2.5/forecast"
 
+    zipcode = event["queryStringParameters"]["zipcode"]
     response = requests.get(url = baseUrl, params = {'zip':zipcode, 'appid':apiKey})
     weather = response.json()
 
@@ -60,9 +60,3 @@ def lambda_handler(zipcode):
         'statusCode': 200,
         'body': json.dumps(data)
     }
-    
-def main():
-    print(lambda_handler('84010'))
-
-if __name__ == "__main__":
-    main()
